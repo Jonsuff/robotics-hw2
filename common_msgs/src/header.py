@@ -16,3 +16,5 @@ while not rospy.is_shutdown():
     pub.publish(msg)
     print("published")
     rate.sleep()
+
+
