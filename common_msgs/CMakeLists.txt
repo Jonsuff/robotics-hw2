@@ -14,6 +14,11 @@ add_message_files(
   SelfMadeMessage.msg
 )    
 
+add_service_files(
+  FILES
+  SelfMadeService.srv
+)
+
 generate_messages(
   DEPENDENCIES
   geometry_msgs
