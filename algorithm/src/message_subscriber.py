@@ -1,15 +1,14 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 import rospy
-from std_msgs.msg import Time
-from geometry_msgs.msg import Quaternion
 from common_msgs.msg import SelfMadeMessage
 
 
 def callback(msg):
-    msg.current_time = rospy.get_rostime()
-    second = msg.current_time.secs
-    msg.rotation = Quaternion(x = second//3600, y = second // 60, z = second, w = second // 86400)
-
+    print("subscribed")
+    print(msg.number.data * msg.rotation.position.x)
+    print(msg.rotation.orientation.x * msg.rotation.position.y)
+    print("----------")
+    
 rospy.init_node("message_subscriber")
 sub = rospy.Subscriber("DateTime_msg", SelfMadeMessage, callback)
-rospyl.spin()
+rospy.spin()
