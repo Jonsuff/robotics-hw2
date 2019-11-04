@@ -7,7 +7,10 @@ count = 0
 
 def service_callback(request):
     response = SelfMadeServiceResponse(result = request.type1 and request.type2)
-    print("--------10 seconds passed----------")
+    if response.result == False:
+        print("--------10 seconds passed----------")
+    elif response.result == True:
+        print("-----------Reset count--------------")
     return response
 
 def callback(msg):

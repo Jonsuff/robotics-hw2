@@ -34,6 +34,9 @@ while not rospy.is_shutdown():
     if count == 10:
         req = SelfMadeServiceRequest(type1 = True, type2 = False)
         res = requester(req)
+    elif count == 20:
+        req = SelfMadeServiceRequest(type1 = True, type2 = True)
+        res = requester(req)
         count = 0
     
     
